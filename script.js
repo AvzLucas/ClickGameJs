@@ -30,12 +30,19 @@ function showIntimidatiton(){
 }
 function Reset(){
     
-  
     clicks = 0;
     moreClicks = 0;
     baseClicks = 0;
     displayContador.innerHTML = '<center>'+ clicks + '</center>';
     intimidation.innerHTML = '<center></center>';
+
+}
+function calculateUpgradePrice(){
+
+    clicks = clicks - upgradePrice;
+    upgradePrice = 50 * baseClicks;
+    console.log(upgradePrice);
+    console.log(clicks);
 
 }
 
@@ -56,10 +63,7 @@ buttonMoreClicks.addEventListener('click',()=>{
         
         baseClicks++;
         upgrades++;
-        clicks = clicks - upgradePrice;
-        upgradePrice = 50 * baseClicks;
-        console.log(upgradePrice);
-        console.log(clicks);
+        calculateUpgradePrice()
         displayContador.innerHTML = '<center>'+ clicks + '</center>';
        
     }
